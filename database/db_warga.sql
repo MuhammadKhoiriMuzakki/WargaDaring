@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16 Jun 2019 pada 16.50
--- Versi Server: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Nov 20, 2020 at 04:42 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kartu_keluarga`
+-- Table structure for table `kartu_keluarga`
 --
 
 CREATE TABLE `kartu_keluarga` (
@@ -48,7 +48,7 @@ CREATE TABLE `kartu_keluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kartu_keluarga`
+-- Dumping data for table `kartu_keluarga`
 --
 
 INSERT INTO `kartu_keluarga` (`id_keluarga`, `nomor_keluarga`, `id_kepala_keluarga`, `alamat_keluarga`, `dusun_keluarga`, `desa_kelurahan_keluarga`, `kecamatan_keluarga`, `kabupaten_kota_keluarga`, `provinsi_keluarga`, `negara_keluarga`, `rt_keluarga`, `rw_keluarga`, `kode_pos_keluarga`, `id_user`, `created_at`, `updated_at`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `kartu_keluarga` (`id_keluarga`, `nomor_keluarga`, `id_kepala_keluar
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mutasi_keluar`
+-- Table structure for table `mutasi_keluar`
 --
 
 CREATE TABLE `mutasi_keluar` (
@@ -87,7 +87,7 @@ CREATE TABLE `mutasi_keluar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mutasi_keluar`
+-- Dumping data for table `mutasi_keluar`
 --
 
 INSERT INTO `mutasi_keluar` (`id_mutasi`, `id_warga`, `alamat_mutasi`, `desa_kelurahan_mutasi`, `kabupaten_kota_mutasi`, `provinsi_mutasi`, `negara_mutasi`, `dusun_mutasi`, `rt_mutasi`, `rw_mutasi`, `kode_pos_mutasi`, `tanggal_pindah`, `alasan_pindah`, `jenis_pindah`, `created_at`, `updated_at`, `kecamatan_mutasi`) VALUES
@@ -96,7 +96,7 @@ INSERT INTO `mutasi_keluar` (`id_mutasi`, `id_warga`, `alamat_mutasi`, `desa_kel
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mutasi_masuk`
+-- Table structure for table `mutasi_masuk`
 --
 
 CREATE TABLE `mutasi_masuk` (
@@ -113,7 +113,7 @@ CREATE TABLE `mutasi_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mutasi_masuk`
+-- Dumping data for table `mutasi_masuk`
 --
 
 INSERT INTO `mutasi_masuk` (`id_mutasi_masuk`, `id_warga`, `id_keluarga`, `dusun_masuk`, `rt_masuk`, `rw_masuk`, `alamat_asal`, `tanggal_pindah`, `alasan_pindah`, `jenis_kepindahan`) VALUES
@@ -127,7 +127,7 @@ INSERT INTO `mutasi_masuk` (`id_mutasi_masuk`, `id_warga`, `id_keluarga`, `dusun
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kelahiran`
+-- Table structure for table `tbl_kelahiran`
 --
 
 CREATE TABLE `tbl_kelahiran` (
@@ -148,7 +148,7 @@ CREATE TABLE `tbl_kelahiran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_kelahiran`
+-- Dumping data for table `tbl_kelahiran`
 --
 
 INSERT INTO `tbl_kelahiran` (`id_kelahiran`, `tgl_kelahiran`, `nama_bayi`, `jk`, `berat_bayi`, `panjang_bayi`, `nama_ayah`, `nama_ibu`, `lokasi_lahir`, `tempat_lahir`, `id_keluarga`, `penolong`, `id_warga`, `id_surat`) VALUES
@@ -164,7 +164,7 @@ INSERT INTO `tbl_kelahiran` (`id_kelahiran`, `tgl_kelahiran`, `nama_bayi`, `jk`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_meninggal`
+-- Table structure for table `tbl_meninggal`
 --
 
 CREATE TABLE `tbl_meninggal` (
@@ -179,7 +179,7 @@ CREATE TABLE `tbl_meninggal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_meninggal`
+-- Dumping data for table `tbl_meninggal`
 --
 
 INSERT INTO `tbl_meninggal` (`id_meninggal`, `tgl_meninggal`, `sebab`, `id_warga`, `tempat_kematian`, `nama_pelapor`, `hubungan_pelapor`, `id_surat`) VALUES
@@ -190,7 +190,7 @@ INSERT INTO `tbl_meninggal` (`id_meninggal`, `tgl_meninggal`, `sebab`, `id_warga
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -212,18 +212,19 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `nama_user`, `username_user`, `password_user`, `keterangan_user`, `status_user`, `desa_kelurahan_user`, `kecamatan_user`, `kabupaten_kota_user`, `provinsi_user`, `negara_user`, `rt_user`, `rw_user`, `created_at`, `updated_at`) VALUES
-(1, 'otakcoding', 'admin', '202cb962ac59075b964b07152d234b70', 'admin di aplikasi pendataan warga', 'Admin', 'kebun jahe', 'binjai', 'medan', 'sumatera utara', 'Indonesia', '001', '002', '2017-10-19 06:31:17', '2017-10-19 06:31:17'),
+(1, 'AdminZakky', 'admin', '202cb962ac59075b964b07152d234b70', 'admin di aplikasi pendataan warga', 'Admin', 'kebun jahe', 'binjai', 'medan', 'sumatera utara', 'Indonesia', '001', '002', '2020-11-10 03:04:09', '2017-10-19 06:31:17'),
 (11, 'Kepala Desa', 'Admin', 'e3afed0047b08059d0fada10f400c1e5', '', 'Admin', 'Dukuhdalem', 'Ciawigebang', 'Kuningan', 'Jawa Barat', 'Indonesia', '-', '-', '2019-06-16 14:48:53', '2017-12-15 04:30:43'),
-(13, 'Kasi Pemerintahan', 'kasi_pemerintahan', '17131d43d1c41721e4daf4a9a6c85cda', 'Kasi Pemerintahan', 'Kasi_Pemerintahan', 'Dukuhdalem', 'Ciawigebang', 'Kuningan', 'Jawa Barat', 'Indonesia', '', '', '2018-01-02 07:57:52', '0000-00-00 00:00:00');
+(13, 'Kasi Pemerintahan', 'kasi_pemerintahan', '17131d43d1c41721e4daf4a9a6c85cda', 'Kasi Pemerintahan', 'Kasi_Pemerintahan', 'Dukuhdalem', 'Ciawigebang', 'Kuningan', 'Jawa Barat', 'Indonesia', '', '', '2018-01-02 07:57:52', '0000-00-00 00:00:00'),
+(14, 'kasi', 'kasi', 'b68fcc3e90e4fecf7182587472526728', '', 'Kasi_Pemerintahan', 'cabawan', 'margadana', 'ciracas', 'jakarta', 'indonesia', '003', '016', '2020-11-20 15:39:14', '2020-11-20 15:38:32');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `warga`
+-- Table structure for table `warga`
 --
 
 CREATE TABLE `warga` (
@@ -253,7 +254,7 @@ CREATE TABLE `warga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `warga`
+-- Dumping data for table `warga`
 --
 
 INSERT INTO `warga` (`id_warga`, `nik_warga`, `nama_warga`, `tempat_lahir_warga`, `tanggal_lahir_warga`, `jenis_kelamin_warga`, `alamat_ktp_warga`, `alamat_warga`, `desa_kelurahan_warga`, `kecamatan_warga`, `kabupaten_kota_warga`, `provinsi_warga`, `negara_warga`, `dusun_warga`, `rt_warga`, `rw_warga`, `agama_warga`, `pendidikan_terakhir_warga`, `pekerjaan_warga`, `status_warga`, `id_user`, `created_at`, `updated_at`) VALUES
@@ -282,7 +283,7 @@ INSERT INTO `warga` (`id_warga`, `nik_warga`, `nama_warga`, `tempat_lahir_warga`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `warga_has_kartu_keluarga`
+-- Table structure for table `warga_has_kartu_keluarga`
 --
 
 CREATE TABLE `warga_has_kartu_keluarga` (
@@ -291,7 +292,7 @@ CREATE TABLE `warga_has_kartu_keluarga` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `warga_has_kartu_keluarga`
+-- Dumping data for table `warga_has_kartu_keluarga`
 --
 
 INSERT INTO `warga_has_kartu_keluarga` (`id_warga`, `id_keluarga`) VALUES
@@ -411,7 +412,7 @@ ALTER TABLE `tbl_meninggal`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `warga`
@@ -420,18 +421,18 @@ ALTER TABLE `warga`
   MODIFY `id_warga` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `kartu_keluarga`
+-- Constraints for table `kartu_keluarga`
 --
 ALTER TABLE `kartu_keluarga`
   ADD CONSTRAINT `kartu_keluarga_ibfk_1` FOREIGN KEY (`id_kepala_keluarga`) REFERENCES `warga` (`id_warga`),
   ADD CONSTRAINT `kartu_keluarga_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 
 --
--- Ketidakleluasaan untuk tabel `tbl_meninggal`
+-- Constraints for table `tbl_meninggal`
 --
 ALTER TABLE `tbl_meninggal`
   ADD CONSTRAINT `tbl_meninggal_ibfk_1` FOREIGN KEY (`id_warga`) REFERENCES `warga` (`id_warga`);
