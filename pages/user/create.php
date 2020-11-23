@@ -33,8 +33,7 @@
       <select class="form-control selectpicker" name="status_user" required>
         <option value="" selected disabled>- pilih -</option>
         <option value="Admin">Admin</option>
-        <option value="RT">RT</option>
-        <option value="RW">RW</option>
+        <option value="Kasi_Pemerintahan">Kasi Pemerintahan</option>
       </select>
     </td>
   </tr>
@@ -70,12 +69,12 @@
   <tr>
     <th>RT</th>
     <td>:</td>
-    <td><input type="text" class="form-control" name="rt_user" value="003" required readonly></td>
+    <td><input type="text" class="form-control" name="rt_user"  required></td>
   </tr>
   <tr>
     <th>RW</th>
     <td>:</td>
-    <td><input type="text" class="form-control" name="rw_user" value="016" required readonly></td>
+    <td><input type="text" class="form-control" name="rw_user" required></td>
   </tr>
 </table>
 

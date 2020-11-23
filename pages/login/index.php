@@ -16,13 +16,13 @@ if (isset($_SESSION['user'])) {
                 <div class="login-panel panel panel-default">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                            <h3 class="panel-heading"><center>Warga Daring Kelurahan Uhamka</center></h3>
+                            <h3 class="panel-heading"><center><img class="panel-heading" src="../../assets/img/logo-login.jpg" width="40%"><br />Warga Daring <br />Kelurahan Uhamka</center></h3>
                         </div>
                     </div>
                 
 
                     <div class="panel-heading">
-                        <h3 class="panel-title">Silahkan login terlebih dahulu !</h3>
+                        <h3 class="panel-title"><marquee>Selamat Datang Di Website Warga Daring, Silahkan login terlebih dahulu !</marquee></h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" method="post" action="../login/proses-login.php">

@@ -94,8 +94,8 @@
     <td>
       <select class="form-control selectpicker" name="dusun_warga" required>
         <option value="<?php echo $data_warga[0]['dusun_warga'] ?>" selected><?php echo $data_warga[0]['dusun_warga'] ?></option>
-        <option value="Dukuh">Dukuh</option>
-        <option value="Tarikolot">Tarikolot</option>
+        <option value="Ciracas">Ciracas</option>
+        <option value="Uhamka">Uhamka</option>
       </select>
     </td>
   </tr>
