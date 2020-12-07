@@ -25,11 +25,6 @@ body {
   border: 0;
 }
 
-.navbar-right > li > a,
-.navbar-right > .hover > a{
-    color: orange !important;
-    background-color: black !important;
-}
 
 /*
  * Sidebar
