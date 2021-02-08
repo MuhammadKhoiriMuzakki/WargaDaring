@@ -15,8 +15,14 @@ $data_user = mysqli_fetch_assoc($hasil);
 if ($data_user != null) {
   // jika user dan password cocok
   $_SESSION['user'] = $data_user;
-  header('Location: ../dasbor');
-} else {
+  if ($_SESSION['user']['status_user'] != 'Warga'){
+  header('Location: ../dasbor'); }
+     else {
+  header('Location: ../dasboruser');
+}
+}
+else{
+
   // jika user dan password tidak cocok
   echo "<script>window.alert('Username atau password salah'); window.location.href='../login'</script>";
 }

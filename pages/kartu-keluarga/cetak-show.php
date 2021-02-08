@@ -8,16 +8,16 @@ class PDF extends FPDF
     function Header()
     {
       // Logo
-      $this->Image('../../assets/img/kng.jpg',20,10);
+      $this->Image('../../assets/img/pc3.PNG',20,10);
 
     	// Arial bold 15
     	$this->SetFont('Times','B',15);
     	// Move to the right
     	// $this->Cell(60);
     	// Title
-        $this->Cell(308,8,'PEMERINTAH KABUPATEN KUNINGAN',0,1,'C');
-        $this->Cell(308,8,'KECAMATAN CIAWIGEBANG',0,1,'C');
-    	$this->Cell(308,8,'DESA DUKUHDALEM',0,1,'C');
+        $this->Cell(308,8,'PEMERINTAH JAKARTA TIMUR',0,1,'C');
+        $this->Cell(308,8,'KECAMATAN UHAMKA',0,1,'C');
+    	$this->Cell(308,8,'KELURAHAN UHAMKA',0,1,'C');
     	// Line break
     	$this->Ln(5);
 

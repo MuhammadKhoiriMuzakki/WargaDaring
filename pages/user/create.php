@@ -34,6 +34,7 @@
         <option value="" selected disabled>- pilih -</option>
         <option value="Admin">Admin</option>
         <option value="Kasi_Pemerintahan">Kasi Pemerintahan</option>
+        <option value="Warga">Warga</option>
       </select>
     </td>
   </tr>

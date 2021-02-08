@@ -2,16 +2,16 @@
 
 <?php # include('list_keluarga.php') ?>
 <?php include('data-edit.php') ?>
-<h1 class="page-header">Tambah Kelahiran</h1>
+<h1 class="page-header">Tambah Data Kematian</h1>
 <?php include('_partials/menu.php') ?>
 <form action="store.php" method="post">
-<label class="col-md-0 control-label" for="="><h4>Data Bayi</h4></label>
+<label class="col-md-0 control-label" for="="><h4>Data Kematian</h4></label>
   <legend></legend>
   <div class="form-group">
-    <label class="col-md-3 control-label" for="nama_bayi">Nama Bayi</label>
+    <label class="col-md-3 control-label" for="nama_warga">Nama Penduduk</label>
     <div class="col-md-9">
     <span class="help-block">
-       <input type="text" class="form-control input-md" name="nama_bayi" id="nama_bayi" size="30" placeholder="Nama Bayi" value="<?php echo $data_kelahiran[0]['nama_bayi'] ?>" required/> 
+       <input type="text" class="form-control input-md" name="nama_warga" id="nama_warga" size="30" placeholder="Nama" value="<?php echo $data_kematian[0]['nama_warga'] ?>" required/> 
       <?php # echo form_error('nama_bayi', '<p class="field_error">','</p>')?>  
     </span>
     </div>
@@ -31,13 +31,13 @@
     </div>
     
     <div class="form-group">
-    <label class="col-md-3 control-label" for="tgl_kelahiran">Tanggal Kelahiran</label> 
+    <label class="col-md-3 control-label" for="tgl_meninggal">Tanggal Kematian</label> 
     <div class="col-md-9">  
     <div class="input-group">
       <span class="input-group-addon">
         <span class="fa fa-table"></span>
       </span>  
-      <input type="text" class="form-control datepicker input-md" name="tgl_kelahiran" size="20" readonly="readonly" value="<?php echo $data_kelahiran[0]['tgl_kelahiran'] ?>" />
+      <input type="text" class="form-control datepicker input-md" name="tgl_meninggal" size="20" readonly="readonly" value="<?php echo $data_kematian[0]['tgl_meninggal'] ?>" />
     </div>
     <span class="help-block"> 
       <?php # echo form_error('tgl_kelahiran', '<p class="field_error">','</p>')?>    
@@ -45,35 +45,25 @@
     </div>
     </div>
     
-    <div class="form-group">
-     <label class="col-md-3 control-label" for="berat_bayi">Berat Bayi </label>
-    <div class="col-md-9">
-    <span class="help-block">
-       <input type="text" class="form-control input-md" name="berat_bayi" id="berat_bayi" size="10" placeholder="Berat Bayi (kg)" value="<?php echo $data_kelahiran[0]['berat_bayi'] ?>" required/> 
-      <?php # echo form_error('berat_bayi', '<p class="field_error">','</p>')?> 
-    </span>
-    </div>
-    </div>
+  
     
     <div class="form-group">
-     <label class="col-md-3 control-label" for="panjang_bayi">Panjang Bayi </label>
+     <label class="col-md-3 control-label" for="sebab">Sebab </label>
     <div class="col-md-9">
     <span class="help-block">
-       <input type="text" class="form-control input-md" name="panjang_bayi" id="panjang_bayi" size="10" placeholder="Panjang Bayi (cm)" value="<?php echo $data_kelahiran[0]['panjang_bayi'] ?>" required/> 
+       <input type="text" class="form-control input-md" name="sebab" id="sebab" size="20" placeholder="Sebab " value="<?php echo $data_kematian[0]['sebab'] ?>" required/> 
       <?php # echo form_error('panjang_bayi', '<p class="field_error">','</p>')?>
     </span>
     </div>
     </div>
   
     <div class="form-group">
-      <label class="col-md-3 control-label" for="is_kembar">Apakah Bayi Kembar?</label>
+      <label class="col-md-3 control-label" for="tempat_kematian">Tempat Kematian</label>
       <div class="col-md-9">
-        <div class="radio">
-          <?php # echo form_radio('is_kembar', 'Y', FALSE); ?><label class="radio"><input type="radio" name="is_kembar" value="Y"> Ya</label>
-        </div>
-        <div class="radio">
-          <?php # echo form_radio('is_kembar', 'N', TRUE); ?><label class="radio"><input type="radio" name="is_kembar" value="N" checked="checked"> Tidak</label>
-        </div>
+      <span class="help-block">
+        <input type="text" class="form-control input-md" name="tempat_kematian" id="tempat_kematian" size="20" placeholder="Tempat Kematian " value="<?php echo $data_kematian[0]['sebab'] ?>" required/>
+        <?php ?>
+      </span> 
       </div>
     </div>
   <legend>&nbsp </legend> 
@@ -101,42 +91,25 @@
        </div>
     </div>
 -->
-    <div class="form-group">
-       <label class="col-md-3 control-label" for="no_kk">No Kepala Keluarga</label> 
-       <div class="col-md-9">
-       <span class="help-block">
-        <input id="no_kk_sementara" name="no_kk_sementara" type="text" placeholder="No Kepala Keluarga" class="form-control input-md" required="" value="<?php echo $data_keluarga[0]['nomor_keluarga'] ?>" disabled/>
-        <input type="hidden" class="form-control input-md" name="no_kk" id="no_kk" size="50"  value="<?php echo $data_keluarga[0]['nomor_keluarga'] ?>" /> 
-      </span>
-       </div>
-    </div>
+  
+    
+   
     
     <div class="form-group">
-       <label class="col-md-3 control-label" for="nama_kk">Nama Kepala Keluarga</label> 
+       <label class="col-md-3 control-label" for="nama_pelapor">Nama Pelapor</label> 
        <div class="col-md-9">
        <span class="help-block">
-        <input id="nama_kk_sementara" name="nama_kk_sementara" type="text" placeholder="Nama Kepala Keluarga" class="form-control input-md" required=""  value="<?php echo $data_keluarga[0]['nama_warga'] ?>" disabled/>
-        <input type="hidden" class="form-control input-md" name="nama_kk" id="nama_kk" size="50" value="<?php echo $data_keluarga[0]['nama_warga'] ?>" /> 
-      </span>
-       </div>
-      <?php # echo form_error('nama_ayah', '<p class="field_error">','</p>')?>  
-    </div>
-    
-    <div class="form-group">
-       <label class="col-md-3 control-label" for="nama_ayah">Nama Ayah</label> 
-       <div class="col-md-9">
-       <span class="help-block">
-       <input type="text" class="form-control" name="nama_ayah" id="nama_ayah" size="50" placeholder="Nama Ayah" value="<?php echo $data_kelahiran[0]['nama_ayah'] ?>"  /> 
+       <input type="text" class="form-control" name="nama_pelapor" id="nama_pelapor" size="50" placeholder="Nama Pelapor" value="<?php echo $data_kematian[0]['nama_pelapor'] ?>"  /> 
        <?php #echo form_error('nama_ayah', '<p class="field_error">','</p>')?>
       </span>
        </div>
     </div>
 
     <div class="form-group">
-       <label class="col-md-3 control-label" for="nama_ibu">Nama Ibu</label> 
+       <label class="col-md-3 control-label" for="hubungan_pelapor">Hubungan Pelapor</label> 
        <div class="col-md-9">
        <span class="help-block">
-       <input type="text" class="form-control" name="nama_ibu" id="nama_ibu" size="50" placeholder="Nama Ibu" value="<?php echo $data_kelahiran[0]['nama_ibu'] ?>" /> 
+       <input type="text" class="form-control" name="hubungan_pelapor" id="hubungan_pelapor" size="50" placeholder="Hubungan Pelapor" value="<?php echo $data_kematian[0]['nama_ibu'] ?>" /> 
        <?php # echo form_error('nama_ibu', '<p class="field_error">','</p>')?>
       </span>
        </div>
@@ -144,45 +117,12 @@
 
 
   <legend>&nbsp </legend> 
-  <label class="col-md-0 control-label" for="="><h4>Data Kelahiran</h4></label>
+  <label class="col-md-0 control-label" for="="><h4>Data Kematian</h4></label>
   <legend></legend>
   
-    <div class="form-group">
-       <label class="col-md-3 control-label" for="lokasi_lahir">Lokasi Lahir </label>
-       <div class="col-md-9">
-        <span class="help-block">
-       <select type="text" class="form-control input-md" name="lokasi_lahir" id="lokasi_lahir">
-          <option value="Tidak Diketahui">--Pilih--</option>
-          <option value="Rumah Bersalin">Rumah Bersalin</option>
-          <option value="Bukan Rumah Bersalin">Bukan Rumah Bersalin</option>
-          <option value="Lainnya">Lainnya</option>
-        </select>
-      </span>
-      <?php # echo form_error('lokasi_lahir', '<p class="field_error">','</p>')?>
-    
-    </div>  
-    </div>
+   
   
-    <div class="form-group">
-    <label class="col-md-3 control-label" for="tempat_lahir">Tempat Lahir</label> 
-    <div class="col-md-9">
-    <span class="help-block">
-       <input type="text" class="form-control input-md" name="tempat_lahir" id="tempat_lahir" size="30" placeholder="Tempat Lahir"value="<?php echo $data_kelahiran[0]['tempat_lahir'] ?>" /> 
-    </span>
-      <?php # echo form_error('tempat_lahir', '<p class="field_error">','</p>')?>
-    </div>  
-    </div>
-
-      <div class="form-group">
-    <label class="col-md-3 control-label" for="penolong">Nama Penolong Kelahiran</label>
-    <div class="col-md-9">
-    <span class="help-block">
-       <input type="text" class="form-control input-md" name="penolong" id="penolong" size="30" placeholder="Nama Penolong Kelahiran" value="<?php echo $data_kelahiran[0]['penolong'] ?>"/>
-      <?php # echo form_error('penolong', '<p class="field_error">','</p>')?>
-    </span>
-    </div>  
-    </div>
-
+    
   <legend>&nbsp </legend> 
   <!--
   <label class="col-md-0 control-label" for="="><h4>Pencetak Surat Kelahiran</h4></label>

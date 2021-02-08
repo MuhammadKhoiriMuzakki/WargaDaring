@@ -28,20 +28,19 @@ class PDF extends FPDF
 
         $this->Ln(1);
 
-        $this->Cell(308,8,'LAPORAN DATA KARTU KELUARGA',0,1,'C');
+        $this->Cell(308,8,'LAPORAN DATA WARGA MENINGGAL',0,1,'C');
         $this->Ln(2);
 
         $this->SetFont('Times','B',9.5);
 
         // header tabel
         $this->cell(10,7,'NO.',1,0,'C');
-        $this->cell(30,7,'NO. KK',1,0,'C');
-        $this->cell(75,7,'KEPALA KELUARGA',1,0,'C');
         $this->cell(30,7,'NIK',1,0,'C');
-        $this->cell(35,7,'JML. ANGGOTA',1,0,'C');
-        $this->cell(98,7,'ALAMAT',1,0,'C');
-        $this->cell(15,7,'RT',1,0,'C');
-        $this->cell(15,7,'RW',1,1,'C');
+        $this->cell(50,7,'NAMA',1,0,'C');
+        $this->cell(50,7,'TANGGAL KEMATIAN',1,0,'C');
+        $this->cell(30,7,'SEBAB',1,0,'C');
+        $this->cell(40,7,'TEMPAT KEMATIAN',1,0,'C');
+        $this->cell(45,7,'HUBUNGAN PELAPOR',1,1,'C');
 
     }
 
@@ -58,11 +57,11 @@ class PDF extends FPDF
 }
 
 // ambil dari database
-$query = "SELECT * FROM kartu_keluarga LEFT JOIN warga ON kartu_keluarga.id_kepala_keluarga = warga.id_warga";
+$query = "SELECT * FROM tbl_meninggal LEFT JOIN warga ON tbl_meninggal.id_meninggal = warga.id_warga";
 $hasil = mysqli_query($db, $query);
-$data_kartu_keluarga = array();
+$data_tbl_meninggal = array();
 while ($row = mysqli_fetch_assoc($hasil)) {
-  $data_kartu_keluarga[] = $row;
+  $data_tbl_meninggal[] = $row;
 }
 
 $pdf = new PDF('L', 'mm', [210, 330]);
@@ -75,21 +74,16 @@ $pdf->SetFont('Times','',9);
 // set penomoran
 $nomor = 1;
 
-foreach ($data_kartu_keluarga as $kartu_keluarga) {
+foreach ($data_tbl_meninggal as $tbl_meninggal) {
 
-    // hitung anggota
-    $query_jumlah_anggota = "SELECT COUNT(*) AS total FROM warga_has_kartu_keluarga WHERE id_keluarga = ".$kartu_keluarga['id_keluarga'];
-    $hasil_jumlah_anggota = mysqli_query($db, $query_jumlah_anggota);
-    $jumlah_jumlah_anggota = mysqli_fetch_assoc($hasil_jumlah_anggota);
 
     $pdf->cell(10, 7, $nomor++ . '.', 1, 0, 'C');
-    $pdf->cell(30, 7, strtoupper($kartu_keluarga['nomor_keluarga']), 1, 0, 'C');
-    $pdf->cell(75, 7, strtoupper($kartu_keluarga['nama_warga']), 1, 0, 'L');
-    $pdf->cell(30, 7, strtoupper($kartu_keluarga['nik_warga']), 1, 0, 'C');
-    $pdf->cell(35, 7, strtoupper($jumlah_jumlah_anggota['total']), 1, 0, 'C');
-    $pdf->cell(98, 7, strtoupper($kartu_keluarga['alamat_keluarga']), 1, 0, 'L');
-    $pdf->cell(15, 7, strtoupper($kartu_keluarga['rt_keluarga']), 1, 0, 'C');
-    $pdf->cell(15, 7, strtoupper($kartu_keluarga['rw_keluarga']), 1, 1, 'C');
+    $pdf->cell(30, 7, strtoupper($tbl_meninggal['id_meninggal']), 1, 0, 'C');
+    $pdf->cell(50, 7, strtoupper($tbl_meninggal['nama_warga']), 1, 0, 'C');
+    $pdf->cell(50, 7, strtoupper($tbl_meninggal['tgl_meninggal']), 1, 0, 'C');
+    $pdf->cell(30, 7, strtoupper($tbl_meninggal['sebab']), 1, 0, 'C');
+    $pdf->cell(40, 7, strtoupper($tbl_meninggal['tempat_kematian']), 1, 0, 'C');
+    $pdf->cell(45, 7, strtoupper($tbl_meninggal['hubungan_pelapor']), 1, 1, 'C');
 
 }
 

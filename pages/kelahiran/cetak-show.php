@@ -8,18 +8,18 @@ class PDF extends FPDF
     function Header()
     {
       // Logo
-      $this->Image('../../assets/img/kng.jpg',20,10);
+      $this->Image('../../assets/img/c2.png',20,10);
 
         // Arial bold 15
         $this->SetFont('Times','B',15);
         // Move to the right
         // $this->Cell(60);
         // Title
-        $this->Cell(200,8,'PEMERINTAH KABUPATEN KUNINGAN',0,1,'C');
-        $this->Cell(200,8,'KECAMATAN CIAWIGEBANG',0,1,'C');
-        $this->Cell(200,8,'DESA DUKUHDALEM',0,1,'C');
+        $this->Cell(200,8,'PEMERINTAH JAKARTA TIMUR',0,1,'C');
+        $this->Cell(200,8,'KECAMATAN UHAMKA',0,1,'C');
+        $this->Cell(200,8,'KELURAHAN UHAMKA',0,1,'C');
         $this->SetFont('Times','',13);
-        $this->Cell(200,8,'Jl.Desa Dukuh Dalem No.1 Ciawigebang kuningan',0,1,'C');
+        $this->Cell(200,8,'Jl.TANAH MERDEKA RAYA NO 6',0,1,'C');
         // Line break
 
         $this->SetFont('Times','BU',12);
@@ -52,10 +52,10 @@ include "data-show.php";
 
             $nomor_surat ="01/SKet/I/2018";
             //$NIP = "";
-            $provinsi = "Jawa Barat";
-            $kabupaten = "Kunigan";
-            $kecamatan = "Ciawigebang";
-            $desa = "Dukuhdalem";
+            $provinsi = "DKI JAKARTA";
+            $kabupaten = "JAKARTA TIMUR";
+            $kecamatan = "UHAMKA";
+            $desa = "UHAMKA";
             
             $jabatan="Kepala Desa";
             $nama_pamong="SUEB";

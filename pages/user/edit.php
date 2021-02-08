@@ -39,6 +39,7 @@
         <option value="<?php echo $data_user[0]['status_user'] ?>" selected><?php echo $data_user[0]['status_user'] ?></option>
         <option value="Admin">Admin</option>
         <option value="Kasi_Pemerintahan">Kasi Pemerintahan</option>
+        <option value="Warga">Warga</option>
       </select>
     </td>
   </tr>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 02:43 PM
+-- Generation Time: Feb 03, 2021 at 04:44 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -199,7 +199,7 @@ CREATE TABLE `user` (
   `username_user` varchar(20) NOT NULL,
   `password_user` varchar(32) NOT NULL,
   `keterangan_user` text NOT NULL,
-  `status_user` enum('Admin','Kasi_Pemerintahan') NOT NULL,
+  `status_user` enum('Admin','Kasi_Pemerintahan','Warga') NOT NULL,
   `desa_kelurahan_user` varchar(30) NOT NULL,
   `kecamatan_user` varchar(30) NOT NULL,
   `kabupaten_kota_user` varchar(30) NOT NULL,
@@ -220,7 +220,8 @@ INSERT INTO `user` (`id_user`, `nama_user`, `username_user`, `password_user`, `k
 (11, 'Kepala Desa', 'Admin', 'e3afed0047b08059d0fada10f400c1e5', '', 'Admin', 'Dukuhdalem', 'Ciawigebang', 'Kuningan', 'Jawa Barat', 'Indonesia', '-', '-', '2019-06-16 14:48:53', '2017-12-15 04:30:43'),
 (13, 'Kasi Pemerintahan', 'kasi_pemerintahan', '17131d43d1c41721e4daf4a9a6c85cda', 'Kasi Pemerintahan', 'Kasi_Pemerintahan', 'Dukuhdalem', 'Ciawigebang', 'Kuningan', 'Jawa Barat', 'Indonesia', '', '', '2018-01-02 07:57:52', '0000-00-00 00:00:00'),
 (14, 'kasi', 'kasi', 'b68fcc3e90e4fecf7182587472526728', '', 'Kasi_Pemerintahan', 'cabawan', 'margadana', 'ciracas', 'jakarta', 'indonesia', '003', '016', '2020-11-20 15:39:14', '2020-11-20 15:38:32'),
-(15, 'rt', 'rt', '822050d9ae3c47f54bee71b85fce1487', 'rt', 'Kasi_Pemerintahan', 'ciracas', 'ciracas', 'jaktim', 'jakarta', 'indonesia', '01', '12', '2020-11-23 12:47:16', '2020-11-23 12:47:16');
+(15, 'rt', 'rt', '822050d9ae3c47f54bee71b85fce1487', 'rt', 'Kasi_Pemerintahan', 'ciracas', 'ciracas', 'jaktim', 'jakarta', 'indonesia', '01', '12', '2020-11-23 12:47:16', '2020-11-23 12:47:16'),
+(16, 'usup', 'usup', '866c5c7a908885802b9e219f02fa4669', 'usup', 'Warga', 'ciracas', 'ciracas', 'ciracas', 'jakarta', 'Indonesia', '01', '12', '2021-02-03 15:00:08', '2021-02-03 15:00:08');
 
 -- --------------------------------------------------------
 
@@ -413,7 +414,7 @@ ALTER TABLE `tbl_meninggal`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `warga`

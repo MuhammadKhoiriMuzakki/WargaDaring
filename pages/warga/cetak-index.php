@@ -8,16 +8,16 @@ class PDF extends FPDF
     function Header()
     {
       // Logo
-      $this->Image('../../assets/img/kng.jpg',20,10);
+      $this->Image('../../assets/img/pc3.PNG',20,10);
 
     	// Arial bold 15
     	$this->SetFont('Times','B',15);
     	// Move to the right
     	// $this->Cell(60);
     	// Title
-        $this->Cell(308,8,'PEMERINTAH KABUPATEN KUNINGAN',0,1,'C');
-        $this->Cell(308,8,'KECAMATAN CIAWIGEBANG',0,1,'C');
-    	$this->Cell(308,8,'DESA DUKUHDALEM',0,1,'C');
+        $this->Cell(308,8,'PEMERINTAH JAKARTA TIMUR',0,1,'C');
+        $this->Cell(308,8,'KECAMATAN UHAMKA',0,1,'C');
+    	$this->Cell(308,8,'KELURAHAN UHAMKA',0,1,'C');
     	// Line break
     	$this->Ln(5);
 
@@ -45,8 +45,7 @@ class PDF extends FPDF
         $this->cell(7,7,'RT',1,0,'C');
         $this->cell(7,7,'RW',1,0,'C');
         $this->cell(20,7,'AGAMA',1,0,'C');
-        $this->cell(26,7,'PERNIKAHAN',1,0,'C');
-        $this->cell(16,7,'PDDKN',1,0,'C');
+          $this->cell(16,7,'PDDKN',1,0,'C');
         $this->cell(20,7,'KERJA',1,0,'C');
         $this->cell(24,7,'STATUS',1,1,'C');
 
@@ -95,8 +94,7 @@ foreach ($data_warga as $warga) {
     $pdf->cell(7, 7, strtoupper($warga['rt_warga']), 1, 0, 'C');
     $pdf->cell(7, 7, strtoupper($warga['rw_warga']), 1, 0, 'C');
     $pdf->cell(20, 7, strtoupper($warga['agama_warga']), 1, 0, 'C');
-    $pdf->cell(26, 7, strtoupper($warga['status_perkawinan_warga']), 1, 0, 'C');
-    $pdf->cell(16, 7, strtoupper($warga['pendidikan_terakhir_warga']), 1, 0, 'C');
+       $pdf->cell(16, 7, strtoupper($warga['pendidikan_terakhir_warga']), 1, 0, 'C');
     $pdf->cell(20, 7, strtoupper($warga['pekerjaan_warga']), 1, 0, 'C');
     $pdf->cell(24, 7, strtoupper($warga['status_warga']), 1, 1, 'C');
 }

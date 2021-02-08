@@ -2,26 +2,26 @@
 include('../../config/koneksi.php');
 
 // ambil dari url
-$get_id_kelahiran = $_GET['id_kelahiran'];
+$get_id_meninggal = ($_GET['id_meninggal']);
 
 // ambil dari database
-$query = "SELECT * FROM tbl_kelahiran WHERE id_kelahiran = $get_id_kelahiran";
+$query = "SELECT * FROM tbl_meninggal WHERE id_meninggal = $get_id_meninggal";
 
 $hasil = mysqli_query($db, $query);
 
-$data_kelahiran = array();
+$data_kematian = array();
 
 while ($row = mysqli_fetch_assoc($hasil)) {
-  $data_kelahiran[] = $row;
+  $data_kematian[] = $row;
 }
 // ambil data KK
 
-$query_keluarga = "SELECT warga.nama_warga, kartu_keluarga.nomor_keluarga, kartu_keluarga.id_keluarga, tbl_kelahiran.id_kelahiran FROM warga JOIN kartu_keluarga ON warga.id_warga=kartu_keluarga.id_kepala_keluarga JOIN tbl_kelahiran WHERE kartu_keluarga.id_keluarga=tbl_kelahiran.id_keluarga AND tbl_kelahiran.id_kelahiran=$get_id_kelahiran ";
+$query_keluarga = "SELECT warga.nama_warga, kartu_keluarga.nomor_keluarga, kartu_keluarga.id_keluarga, tbl_meninggal.id_meninggal FROM warga JOIN kartu_keluarga ON warga.id_warga=kartu_keluarga.id_kepala_keluarga JOIN tbl_meninggal WHERE kartu_keluarga.id_keluarga=tbl_meninggal.id_meninggal AND tbl_meninggal.id_meninggal=$get_id_meninggal ";
 
 $hasil_keluarga = mysqli_query($db, $query_keluarga);
 
 $data_keluarga = array();
 
-while ($row_keluarga = mysqli_fetch_assoc($hasil_keluarga)){
+while ($row_keluarga = mysqli_fetch_assoc($hasil_keluarga)) {
 	$data_keluarga[] = $row_keluarga;
 }

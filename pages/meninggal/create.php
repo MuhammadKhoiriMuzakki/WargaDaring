@@ -91,20 +91,20 @@
   <legend></legend>
 
   <div class="form-group">
-    <label class="col-md-3 control-label" for="pelapor">Nama Pelapor Kematian</label>
+    <label class="col-md-3 control-label" for="nama_pelapor">Nama Pelapor Kematian</label>
     <div class="col-md-9">
     <span class="help-block">
-       <input type="text" class="form-control input-md" name="pelapor" id="pelapor" size="30" placeholder="Nama Pelapor Kematian"/>
+       <input type="text" class="form-control input-md" name="nama_pelapor" id="nama_pelapor" size="30" placeholder="Nama Pelapor Kematian"/>
       <?php # echo form_error('penolong', '<p class="field_error">','</p>')?>
     </span>
     </div>  
     </div>
 
   <div class="form-group">
-    <label class="col-md-3 control-label" for="hub_pelapor">Hubungan Pelapor</label>
+    <label class="col-md-3 control-label" for="hubungan_pelapor">Hubungan Pelapor</label>
     <div class="col-md-9">
     <span class="help-block">
-       <input type="text" class="form-control input-md" name="hub_pelapor" id="hub_pelapor" size="30" placeholder="Hubungan Pelapor"/>
+       <input type="text" class="form-control input-md" name="hubunga_pelapor" id="hubungan_pelapor" size="30" placeholder="Hubungan Pelapor"/>
       <?php # echo form_error('penolong', '<p class="field_error">','</p>')?>
     </span>
     </div>  
