@@ -70,13 +70,11 @@ function is_active($page) {
   </li>
 </ul>
 -->
-<?php if ($_SESSION['user']['status_user'] == 'Warga'): ?>
   <ul class="nav nav-sidebar">
   <li class="<?php is_active('berita'); ?>">
     <a href="../berita/index.php"><i class="fa fa-home"></i> Berita</a>
   </li>
   </ul>
-<?php endif; ?>
 
 <?php if ($_SESSION['user']['status_user'] == 'Admin'): ?>
 <ul class="nav nav-sidebar">
