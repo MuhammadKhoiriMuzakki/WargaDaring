@@ -26,14 +26,11 @@ function is_active($page) {
   <li class="<?php is_active('warga'); ?>">
     <a href="../warga"><i class="fa fa-user"></i> Data Penduduk</a>
   </li>
-  <?php endif; ?>
-  <?php if ($_SESSION['user']['status_user'] != 'Warga'): ?>
   <li class="<?php is_active('kartu-keluarga'); ?>">
     <a href="../kartu-keluarga"><i class="fa fa-user fa-group"></i> Data Kartu Keluarga</a>
   </li>
-  <?php endif; ?>
-
 </ul>
+<?php endif; ?>
 <?php if ($_SESSION['user']['status_user'] != 'Warga'): ?>
 <div class="dropdown">
 <ul class="nav nav-sidebar">
@@ -41,16 +38,15 @@ function is_active($page) {
     <a href="#list" data-toggle="collapse"><i class="fa fa-exchange fa-fw"></i> Data Mutasi</a>
       <!--<a href="../mutasi"><i class="glyphicon glyphicon-export"></i> Data Mutasi</a>-->
   </li>
-  <?php endif; ?>
     <div id="list" class="collapse">
       <div class="list-group">
         <a href="../mutasi-datang" class="list-group-item"><i class="fa fa-long-arrow-right fa-fw"></i> Pindah Datang</a>
         <a href="../mutasi-keluar" class="list-group-item"><i class="fa fa-long-arrow-left fa-fw"></i> Pindah Keluar</a>
       </div>
     </div>
-  
 </ul> 
 </div>
+<?php endif; ?>
 <?php if ($_SESSION['user']['status_user'] != 'Warga'): ?>
 <div class="dropdown">
 <ul class="nav nav-sidebar">
@@ -58,17 +54,15 @@ function is_active($page) {
     <a href="#peristiwa" data-toggle="collapse"><i class="fa fa-newspaper-o fa-fw"></i> Peristiwa</a>
       <!--<a href="../mutasi"><i class="glyphicon glyphicon-export"></i> Data Mutasi</a>-->
   </li>
-  <?php endif; ?>
     <div id="peristiwa" class="collapse">
       <div class="list-group">
         <a href="../kelahiran" class="list-group-item"><i class="fa fa-venus-mars fa-fw"></i> Kelahiran</a>
         <a href="../meninggal" class="list-group-item"><i class="fa fa-ambulance fa-fw"></i> Kematian</a>
       </div>
     </div>
-  
 </ul> 
 </div>
-
+<?php endif; ?>
 <!--
 <ul class="nav nav-sidebar">
   <li class="<?php is_active('galeri'); ?>">
@@ -76,8 +70,15 @@ function is_active($page) {
   </li>
 </ul>
 -->
+<?php if ($_SESSION['user']['status_user'] == 'Warga'): ?>
+  <ul class="nav nav-sidebar">
+  <li class="<?php is_active('berita'); ?>">
+    <a href="../berita/index.php"><i class="fa fa-home"></i> Berita</a>
+  </li>
+  </ul>
+<?php endif; ?>
 
-<?php if ($_SESSION['user']['status_user'] != 'Kasi_Pemerintahan'): ?>
+<?php if ($_SESSION['user']['status_user'] == 'Admin'): ?>
 <ul class="nav nav-sidebar">
   <li class="<?php is_active('user'); ?>">
     <a href="../user"><i class="fa fa-user"></i> User</a>
